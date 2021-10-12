@@ -31,18 +31,25 @@ class gameDAO:
         :param game status:
         :return: record id
         """
-        sql = ''' INSERT INTO games(win)
-                VALUES(?) '''
+       
         cur = conn.cursor()
         record = 0;
         if status == "Player wins" :
             record = 1
         elif status == "Banker wins":
             record = 2
-        cur.execute(sql, record)
+        cur.execute('INSERT INTO games(win) VALUES(?)',(record, ))
         conn.commit()
         return cur.lastrowid
 
-    def getAll():
-        conn = sqlite3.connect('game.db')
-        
+    def getAll(conn):
+        """
+        Query all rows in the games table
+        :param conn: the Connection object
+        :return:
+        """
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM games")
+
+        rows = cur.fetchall()
+        return rows
