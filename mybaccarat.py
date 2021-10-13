@@ -19,7 +19,9 @@ def GameResult(player_score, banker_score):
     else:
         return OUTCOME[2]
 
-def isLowScore_Player(player_score, player_hand, banker_score, banker_hand, Results):
+def isLowScore_Player(player_score, player_hand, banker_score, banker_hand):
+    # if player_score in [8, 9] or banker_score in [8, 9]:
+    #     Results = GameResult(player_score, banker_score)
     if player_score in irange(0, 5):
         # Player get's a third card
         player_hand.append(random.choice(CARDS))
@@ -40,12 +42,12 @@ def isLowScore_Player(player_score, player_hand, banker_score, banker_hand, Resu
             # print('Banker gets a third card:\t' + banker_hand[2])
 
     # Compute the scores again and return the outcome
-    player_score = compute_score(player_hand)
-    banker_score = compute_score(banker_hand)
+    # player_score = compute_score(player_hand)
+    # banker_score = compute_score(banker_hand)
 
     # print('Player has final score of\t' + str(player_score))
     # print('Banker has final score of\t' + str(banker_score))
-    Results = GameResult(player_score, banker_score)
+    # Results = GameResult(player_score, banker_score)
     # print(Results)
 
 class gameStatus:
@@ -62,4 +64,7 @@ class gameStatus:
         # print('Banker has cards:\t' + self.Banker_Cards[0] + '\t' + self.Banker_Cards[1])
         # print('Player has score of\t' +  str(self.Player_Score))
         # print('Banker has score of\t' + str(self.Banker_Score))
-        isLowScore_Player(self.Player_Score,self.Player_Cards, self.Banker_Score,self.Banker_Cards,self.Results)
+        isLowScore_Player(self.Player_Score,self.Player_Cards, self.Banker_Score,self.Banker_Cards)
+        self.Player_Score = compute_score(self.Player_Cards)
+        self.Banker_Score = compute_score(self.Banker_Cards)
+        self.Results = GameResult(self.Player_Score, self.Banker_Score)
