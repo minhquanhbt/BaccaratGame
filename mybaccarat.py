@@ -26,7 +26,7 @@ def isLowScore_Player(player_score, player_hand, banker_score, banker_hand):
         # Player get's a third card
         player_hand.append(random.choice(CARDS))
         player_third = compute_score([player_hand[2]])
-        print('Player gets a third card:\t' + player_hand[2])
+        # print('Player gets a third card:\t' + player_hand[2])
         # Determine if banker needs a third card
         if (banker_score == 6 and player_third in [6, 7]) or \
             (banker_score == 5 and player_third in irange(4, 7)) or \
@@ -34,12 +34,12 @@ def isLowScore_Player(player_score, player_hand, banker_score, banker_hand):
             (banker_score == 3 and player_third != 8) or \
             (banker_score in [0, 1, 2]):
             banker_hand.append(random.choice(CARDS))
-            print('Banker gets a third card:\t' + banker_hand[2])
+            # print('Banker gets a third card:\t' + banker_hand[2])
 
     elif player_score in [6, 7]:
         if banker_score in irange(0, 5):
             banker_hand.append(random.choice(CARDS))
-            print('Banker gets a third card:\t' + banker_hand[2])
+            # print('Banker gets a third card:\t' + banker_hand[2])
 
     # Compute the scores again and return the outcome
     # player_score = compute_score(player_hand)
@@ -60,10 +60,10 @@ class gameStatus:
     Results = GameResult(Player_Score, Banker_Score)
 
     def __init__(self):
-        print('Player has cards:\t' + self.Player_Cards[0] + '\t' + self.Player_Cards[1])
-        print('Banker has cards:\t' + self.Banker_Cards[0] + '\t' + self.Banker_Cards[1])
-        print('Player has score of\t' +  str(self.Player_Score))
-        print('Banker has score of\t' + str(self.Banker_Score))
+        # print('Player has cards:\t' + self.Player_Cards[0] + '\t' + self.Player_Cards[1])
+        # print('Banker has cards:\t' + self.Banker_Cards[0] + '\t' + self.Banker_Cards[1])
+        # print('Player has score of\t' +  str(self.Player_Score))
+        # print('Banker has score of\t' + str(self.Banker_Score))
         isLowScore_Player(self.Player_Score,self.Player_Cards, self.Banker_Score,self.Banker_Cards)
         self.Player_Score = compute_score(self.Player_Cards)
         self.Banker_Score = compute_score(self.Banker_Cards)
