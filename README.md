@@ -4,4 +4,9 @@
 # First step:
  Run Entity.py file to create a new database
 
-# Module need:
+# Required Module:
+ ## Fastapi
+    $ pip install fastapi
+ ## Uvicorn (Asynchronous Server Gateway Interface)
+    $ pip install uvicorn
+    $ uvicorn api:app
