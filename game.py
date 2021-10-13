@@ -6,5 +6,5 @@ conn = db.create_connection(database)
 with conn:
     record = game.Results
     print(record)
-    id = db.insert(conn, record)
+    # id = db.insert(conn, record)
     print(db.getAll(conn))

@@ -50,6 +50,13 @@ class gameDAO:
         """
         cur = conn.cursor()
         cur.execute("SELECT * FROM games")
-
+        sta = []
         rows = cur.fetchall()
-        return rows
+        for row in rows:
+            if row[1] == 0:
+                sta.append(["Tie"])
+            elif row[1] == 1:
+                sta.append(["Player wins"])
+            elif row[1] == 2:
+                sta.append(["Banker wins"])
+        return sta
