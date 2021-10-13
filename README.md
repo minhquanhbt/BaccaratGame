@@ -6,8 +6,8 @@
 
 # Required Module:
  ## Fastapi
-    $ pip install fastapi
+    pip install fastapi
  ## Uvicorn (Asynchronous Server Gateway Interface)
-    $ pip install uvicorn
+    pip install uvicorn
 ---
-    $ uvicorn api:app
+    uvicorn api:app
