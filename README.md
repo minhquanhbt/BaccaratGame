@@ -10,4 +10,7 @@
  ## Uvicorn (Asynchronous Server Gateway Interface)
     pip install uvicorn
 ---
-    uvicorn api:app
+ Run server:
+    python -m uvicorn api:app --reload --host localhost
+ ## Pydantic
+    pip install pydantic
