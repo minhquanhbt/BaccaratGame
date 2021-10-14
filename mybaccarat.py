@@ -68,3 +68,6 @@ class gameStatus:
         self.Player_Score = compute_score(self.Player_Cards)
         self.Banker_Score = compute_score(self.Banker_Cards)
         self.Results = GameResult(self.Player_Score, self.Banker_Score)
+
+    def __del__(self):
+        print('Deleted')
