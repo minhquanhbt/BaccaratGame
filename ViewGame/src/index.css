@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./myps9j.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 800px;
+  height: 70vh;
+}
+.bcr-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 30px;
+}
+.player {
+  background: rgb(117, 35, 35);
+  color: aliceblue;
+  padding: 3px 100px;
+  font-weight: 900;
+  border-radius: 20px;
+}
+.banker {
+  background: #ba9510;
+  color: aliceblue;
+  padding: 3px 100px;
+  font-weight: 900;
+  border-radius: 20px;
+}
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+  
+}
+.cards__item {
+  display: flex;
+  align-items: center;
+}
+.card {
+  width: 95px;
+  height: 150px;
+  margin: 0 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card img{
+  width: 100%;
+  height: 100%;
+}
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.options__center {
+  display: flex;
+  flex-direction: column;
+}
+.option {
+  text-align: center;
+  margin: 7px 0;
+  border: 3px solid white;
+  background-color: rgb(91, 126, 68);
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 5px 50px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
