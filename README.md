@@ -11,8 +11,9 @@
     pip install uvicorn
 ---
  Run server:
- ==please use this command in the directory of api.py==
  
+ ==please use this command in the directory of api.py==
+
     python -m uvicorn api:app --reload --host localhost
  ## Pydantic
     pip install pydantic
