@@ -10,7 +10,7 @@
  ## Uvicorn (Asynchronous Server Gateway Interface)
     pip install uvicorn
 ---
- Run server:
+ ***Run server:***
 
 *please use this command in the directory of api.py*
 
