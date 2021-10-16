@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import 'antd/dist/antd.css';
 import A from './img/A.jpg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [cards, setCards] = useState(['A', 'K', 'Q', '4', '5', '6']);
+  const [win, setWin] = useState('Player wins');
+  const [sugges, setSugges] = useState('Player')
+  const [tik,setTik ] = useState(false)
+  const notify = () =>{ toast(sugges); setTik(true)};
   return (
     <React.Fragment>
       <div className="container">
+      <div>
+        <ToastContainer />
+      </div>
         <div className="bcr-top">
           <div className="player">PLAYER</div>
           <div className="banker">BANKER</div>
@@ -42,17 +51,19 @@ function App() {
         </div>
         <div className="options">
           <div className="options__center">
-            <span style={{ color: '#3cf24e' }} className="option">
+            <span rel="wobble-bottom" style={{ color: '#3cf24e' }} className={sugges == "Tie" ? "option wobble-bottom" : "option"}>
               TIE
             </span>
-            <span style={{ color: 'yellow' }} className="option">
+            <span style={{ color: 'yellow' }} className={sugges == "Banker" ? "option wobble-bottom" : "option"}>
               BANKER
             </span>
-            <span style={{ color: 'rgb(117, 35, 35)' }} className="option">
+            <span style={{ color: 'rgb(117, 35, 35)' }} className={sugges == "Player" && tik? "option wobble-bottom" : "option"}>
               PLAYER
             </span>
           </div>
         </div>
+      
+        <div className="start" onClick={notify}>Start</div>
       </div>
     </React.Fragment>
   );
