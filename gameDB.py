@@ -33,7 +33,7 @@ class gameDAO:
         """
        
         cur = conn.cursor()
-        record = 0;
+        record = 0
         if status == "Player wins" :
             record = 1
         elif status == "Banker wins":
@@ -51,5 +51,11 @@ class gameDAO:
         cur = conn.cursor()
         cur.execute("SELECT * FROM games")
 
+        rows = cur.fetchall()
+        return rows
+
+    def get25Record(conn):
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM games order by id desc limit 25")
         rows = cur.fetchall()
         return rows
