@@ -18,7 +18,7 @@ c.execute("""CREATE TABLE games (
 for i in range(500):
     database = r"game.db"
     conn = db.create_connection(database)
-    g = game()
+    g = game.new()
     record = g.Results
     db.insert(conn, record)
 
