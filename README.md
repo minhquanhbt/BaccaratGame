@@ -10,10 +10,8 @@
  ## Uvicorn (Asynchronous Server Gateway Interface)
     pip install uvicorn
  ***Run server:***
-
-*please use this command in the directory of api.py*
-
-    python -m uvicorn api:app --reload --host localhost
+   run api.py file
+   Server url: api.localhost:8000
  ## Pydantic
     pip install pydantic
 #Run UI
