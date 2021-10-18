@@ -31,6 +31,11 @@ async def root():
 @app.get("/play")
 async def play():
     g = game.new()
+    conn = db.create_connection("game.db")
+    with conn:
+        record = game.Results
+        db.insert(conn, record)
+
     res = {"Banker_Cards": g.Banker_Cards,
     "Player_Cards": g.Player_Cards,
     "Banker_Score": g.Banker_Score,
