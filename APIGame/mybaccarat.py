@@ -20,8 +20,9 @@ def GameResult(player_score, banker_score):
         return OUTCOME[2]
 
 def isLowScore_Player(player_score, player_hand, banker_score, banker_hand):
-    # if player_score in [8, 9] or banker_score in [8, 9]:
-    #     Results = GameResult(player_score, banker_score)
+    if player_score in [8, 9] or banker_score in [8, 9]:
+        Results = GameResult(player_score, banker_score)
+        return 0
     if player_score in irange(0, 5):
         # Player get's a third card
         player_hand.append(random.choice(CARDS))
