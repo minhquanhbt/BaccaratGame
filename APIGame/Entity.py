@@ -8,7 +8,7 @@ conn = sqlite3.connect('game.db')
 #create a cursor
 c = conn.cursor()
 
-#create a table
+# create a table
 c.execute("""CREATE TABLE games (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     win INTEGER NOT NULL
@@ -26,7 +26,9 @@ for i in range(500):
     g = game.new()
     record = g.Results
     db.insert(conn, record)
-
+database = r"game.db"
+conn = db.create_connection(database)
+db.insert_patern(conn,"Banker wins")
 print("successfully created")
 
 #commit command
