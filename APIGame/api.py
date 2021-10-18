@@ -7,11 +7,13 @@ import uvicorn
 
 app = FastAPI()
 
+
 origins = [
-    "http://localhost.baccarat.com",
-    "https://localhost.baccarat.com",
-    "http://localhost",
-    "http://localhost:8080",
+    CORSMiddleware,
+    "http://api.localhost.baccarat.com",
+    "https://api.localhost.baccarat.com",
+    "http://api.localhost",
+    "http://api.localhost:3000",
 ]
 
 app.add_middleware(
@@ -36,4 +38,4 @@ async def play():
     "Results": g.Results}
     return res
 if __name__ == "__main__":
-    uvicorn.run("api:app", host="localhost", port=8000, log_level="info")
+    uvicorn.run("api:app", host="api.localhost", port=8000, log_level="info")
