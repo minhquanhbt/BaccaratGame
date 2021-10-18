@@ -65,31 +65,21 @@ class gameStatus:
         # print('Banker has cards:\t' + self.Banker_Cards[0] + '\t' + self.Banker_Cards[1])
         # print('Player has score of\t' +  str(self.Player_Score))
         # print('Banker has score of\t' + str(self.Banker_Score))
-
+        self.Player_Cards = [random.choice(CARDS), random.choice(CARDS)]
+        self.Banker_Cards = [random.choice(CARDS), random.choice(CARDS)]
         isLowScore_Player(self.Player_Score,self.Player_Cards, self.Banker_Score,self.Banker_Cards)
         self.Player_Score = compute_score(self.Player_Cards)
         self.Banker_Score = compute_score(self.Banker_Cards)
         self.Results = GameResult(self.Player_Score, self.Banker_Score)
 
     def new():
-        Player_Cards = [random.choice(CARDS), random.choice(CARDS)]
-        Banker_Cards = [random.choice(CARDS), random.choice(CARDS)]
-    
-        Player_Score = compute_score(Player_Cards)
-        Banker_Score = compute_score(Banker_Cards)
-
-        Results = GameResult(Player_Score, Banker_Score)
         g = gameStatus
-        
+        g.Player_Cards = [random.choice(CARDS), random.choice(CARDS)]
+        g.Banker_Cards = [random.choice(CARDS), random.choice(CARDS)]
         
         isLowScore_Player(g.Player_Score,g.Player_Cards, g.Banker_Score,g.Banker_Cards)
         g.Player_Score = compute_score(g.Player_Cards)
         g.Banker_Score = compute_score(g.Banker_Cards)
         g.Results = GameResult(g.Player_Score, g.Banker_Score)
 
-        g.Player_Cards = Player_Cards
-        g.Banker_Cards = Banker_Cards
-        g.Player_Score = Player_Score
-        g.Banker_Score = Banker_Score
-        g.Results = Results
         return g

@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from mybaccarat import gameStatus as game
 from gameDB import gameDAO as db
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 app = FastAPI()
 
@@ -34,3 +35,5 @@ async def play():
     "Player_Score": g.Player_Score,
     "Results": g.Results}
     return res
+if __name__ == "__main__":
+    uvicorn.run("api:app", host="localhost", port=8000, log_level="info")
