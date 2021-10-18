@@ -58,4 +58,42 @@ class gameDAO:
         cur = conn.cursor()
         cur.execute("SELECT * FROM games order by id desc limit 25")
         rows = cur.fetchall()
+        return rows             
+        
+
+    def getAll_patern(conn):
+        
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM patern")
+
+        rows = cur.fetchall()
         return rows
+
+    def insert_patern(conn, status):    
+        cur = conn.cursor()
+        record = 0
+        if status == "Player wins" :
+            record = 1
+        elif status == "Banker wins":
+            record = 2
+        cur.execute('INSERT INTO patern(TT) VALUES(?)',(record, ))
+        conn.commit()
+        return cur.lastrowid
+
+    def delete_resetvalue_patern(conn, id):
+        cur = conn.cursor()        
+        cur.execute('DELETE FROM patern where id < ?', (id, ))
+        conn.commit()
+        return cur.lastrowid
+
+    def delete_firstvalue_patern(conn, id):
+        cur = conn.cursor()        
+        cur.execute('DELETE FROM patern where id = ?', (id, ))
+        conn.commit()
+        return cur.lastrowid
+
+    def delete_all_patern(conn):
+        cur = conn.cursor()        
+        cur.execute('DELETE FROM patern')
+        conn.commit()
+        return cur.lastrowid

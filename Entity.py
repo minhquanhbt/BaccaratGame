@@ -12,6 +12,11 @@ c.execute("""CREATE TABLE games (
     win INTEGER NOT NULL
 )""")
 
+c.execute("""CREATE TABLE patern (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    TT INTEGER NOT NULL
+)""")
+
 #commit command
 conn.commit()
 
