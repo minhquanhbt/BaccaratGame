@@ -12,6 +12,7 @@ class gameDAO:
         conn = None
         try:
             conn = sqlite3.connect(db_file)
+            
         except Error as e:
             print(e)
         return conn
@@ -77,23 +78,23 @@ class gameDAO:
         elif status == "Banker wins":
             record = 2
         cur.execute('INSERT INTO patern(TT) VALUES(?)',(record, ))
-        conn.commit()
+        conn.commit()        
         return cur.lastrowid
 
     def delete_resetvalue_patern(conn, id):
         cur = conn.cursor()        
-        cur.execute('DELETE FROM patern where id < ?', (id, ))
-        conn.commit()
+        cur.execute('DELETE FROM patern where id < ?', (id, ))                
+        conn.commit()        
         return cur.lastrowid
 
     def delete_firstvalue_patern(conn, id):
         cur = conn.cursor()        
         cur.execute('DELETE FROM patern where id = ?', (id, ))
-        conn.commit()
+        conn.commit()        
         return cur.lastrowid
 
     def delete_all_patern(conn):
         cur = conn.cursor()        
         cur.execute('DELETE FROM patern')
-        conn.commit()
+        conn.commit()        
         return cur.lastrowid
