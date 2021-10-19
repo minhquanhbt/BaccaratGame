@@ -13,7 +13,6 @@ import uvicorn
 app = FastAPI()
 
 
-
 origins = [
     CORSMiddleware,
     "http://api.localhost.baccarat.com",
