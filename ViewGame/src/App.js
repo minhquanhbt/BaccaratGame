@@ -40,28 +40,34 @@ function App() {
           <div className="cards__item">
             <div className="card">
               <img src={require(`./img/${cards[0]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
             <div className="card">
               {' '}
               <img src={require(`./img/${cards[1]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
             <div className="card">
               {' '}
               <img src={require(`./img/${cards[2]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
           </div>
           <div className="cards__item">
             <div className="card">
               {' '}
               <img src={require(`./img/${cards[3]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
             <div className="card">
               {' '}
               <img src={require(`./img/${cards[4]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
             <div className="card">
               {' '}
               <img src={require(`./img/${cards[5]}.jpg`).default} />
+              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
             </div>
           </div>
         </div>
