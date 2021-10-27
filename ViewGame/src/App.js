@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import cookies from 'axios/lib/helpers/cookies';
 import { getResult } from './Api';
 function App() {
-  const [cards, setCards] = useState(['A', 'K', 'Q', '4', '5', '6']);
+  // const [cards, setCards] = useState(['A', 'K', 'Q', '4', '5', '6']);
+  const [cards, setCards] = useState([]);
   const [win, setWin] = useState('Player wins');
   const [sugges, setSugges] = useState('Player');
   const [tik, setTik] = useState(false);
@@ -19,10 +20,13 @@ function App() {
   const fetchAPI = async () => {
     await getResult()
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
       })
       .catch((error) => Error(error.toString()));
   };
+  const handleClick =()=>{
+    
+  }
   useEffect(() => {
     fetchAPI();
   }, []);
@@ -39,61 +43,75 @@ function App() {
         <div className="cards">
           <div className="cards__item">
             <div className="card">
-              <img src={require(`./img/${cards[0]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[0] ? (
+                <img src={require(`./img/${cards[0]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
             <div className="card">
-              {' '}
-              <img src={require(`./img/${cards[1]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[1] ? (
+                <img src={require(`./img/${cards[1]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
             <div className="card">
-              {' '}
-              <img src={require(`./img/${cards[2]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[2] ? (
+                <img src={require(`./img/${cards[2]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
           </div>
           <div className="cards__item">
             <div className="card">
-              {' '}
-              <img src={require(`./img/${cards[3]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[3] ? (
+                <img src={require(`./img/${cards[3]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
             <div className="card">
-              {' '}
-              <img src={require(`./img/${cards[4]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[4] ? (
+                <img src={require(`./img/${cards[4]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
             <div className="card">
-              {' '}
-              <img src={require(`./img/${cards[5]}.jpg`).default} />
-              {/* <img src={require(`./img/matsau.jpg`).default} /> */}
+              {cards[5] ? (
+                <img src={require(`./img/${cards[5]}.jpg`).default} />
+              ) : (
+                <img src={require(`./img/matsau.jpg`).default} />
+              )}
             </div>
           </div>
         </div>
         <div className="options">
           <div className="options__center">
-            <span
+            <a
               rel="wobble-bottom"
               style={{ color: '#3cf24e' }}
               className={sugges == 'Tie' ? 'option wobble-bottom' : 'option'}
+              onClick={handleClick}
             >
               TIE
-            </span>
-            <span
+            </a>
+            <a
               style={{ color: 'yellow' }}
               className={sugges == 'Banker' ? 'option wobble-bottom' : 'option'}
             >
               BANKER
-            </span>
-            <span
+            </a>
+            <a
               style={{ color: 'rgb(117, 35, 35)' }}
               className={
                 sugges == 'Player' && tik ? 'option wobble-bottom' : 'option'
               }
             >
               PLAYER
-            </span>
+            </a>
           </div>
         </div>
 
