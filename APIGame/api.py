@@ -14,11 +14,8 @@ app = FastAPI()
 
 
 origins = [
-    CORSMiddleware,
-    "http://api.localhost.baccarat.com",
-    "https://api.localhost.baccarat.com",
-    "http://api.localhost",
-    "http://api.localhost:3000",
+    "http://localhost",
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
