@@ -1,5 +1,5 @@
-{"homepage": "https://buihuongquynh.github.io/BaccaratGame/",
-  "name": "ViewGame",
+{
+  "name": "BaccaratGame",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
