@@ -4,6 +4,7 @@ import queryString from 'query-string';
 const instance = axios.create({
   baseURL: "http://api.localhost:8000", 
   headers: {
+    
     'content-type': 'application/json',
     Accept: 'application/json',
     'Access-Control-Allow-Origin': '*', 

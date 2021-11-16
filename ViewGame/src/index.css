@@ -14,6 +14,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.wrapper{
+  width: 100%;
+  height: 100vh;
+ background-image: url(./d.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .container {
   position: absolute;
   top: 50%;
@@ -23,7 +30,7 @@ code {
   background-repeat: no-repeat;
   background-size: cover;
   width: 800px;
-  height: 70vh;
+  height: 80vh;
 }
 .bcr-top {
   display: flex;
@@ -138,4 +145,49 @@ code {
   transform: translateZ(0);
   box-shadow: 0 0 1px rgb(0 0 0 / 0%)
 }
+.item{
+  display: flex;
+  align-items: center;
+}
+.score{
+  font-size: 38px;
+  font-weight: 700;
+}
+h1 {
+  font-family: "Roboto";
+  text-align: center;
+  margin-bottom: 40px;
+}
 
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  color: #aaa;
+}
+
+.value {
+  font-size: 40px;
+}
+
+.info {
+  max-width: 300px;
+  text-align: center;
+  font-size: 16px;
+}
+.count-down{
+  position: absolute;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
